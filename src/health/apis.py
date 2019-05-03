@@ -11,4 +11,8 @@ class HealthResource(Resource):
 
 # Register the resource so the Load balancer can connect to this endpoint
 # to check our service health.
-api.add_resource(HealthResource, '/healthz')
+api.add_resource(HealthResource, '/health')
+
+
+# wget --header='Host: inventory.default.example.com' http://inventory/health
+# wget --header='Host: inventory.default.example.com' http://inventory/healthz

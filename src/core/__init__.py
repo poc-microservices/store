@@ -11,7 +11,8 @@ app = create_app(__name__)
 
 # Configuration
 # Create API
-api = CoreApi(app)
+prefix = app.config['APPLICATION_ROOT'] if app.config['APPLICATION_ROOT'] else '/'
+api = CoreApi(app, prefix=prefix)
 
 # Sync up database
 db.app = app

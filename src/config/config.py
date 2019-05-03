@@ -16,6 +16,7 @@ class BaseConfig():
     Base application configuration
     """
     SECRET_KEY = os.getenv('SECRET_KEY', 'invisible_key')
+    APPLICATION_ROOT = os.getenv('APPLICATION_ROOT', '/')
     JWT_SECRET_KEY = 'super-secret'
     # Config JWT expires time in minutes
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(
